@@ -27,60 +27,64 @@ public class RandomTest {
 		System.out.println("==가위 바위 보 게임==");
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자를 선택하세요(1.가위 /2.바위 /3.보) :");
+		//사용자의 선택 chi
 		int chi =sc.nextInt();
-		int com =(int)(Math.random()*3)+1;
+		//컴퓨터의 선텍 comp
+		int comp =(int)(Math.random()*3)+1;
 		
-		
+		//가위를 냈을 경우
 		System.out.println("========결과========");
-		if(chi==1 && com ==3) {
+		if(chi==1 && comp ==3) {
 			System.out.println("당신은 가위를 냈습니다.");
 			System.out.println("컴퓨터는 보를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("당신이 이겼습니다. ㅠ.ㅠ");
 		}
-		else if(chi ==1 && com == 2) {
+		else if(chi ==1 && comp == 2) {
 			System.out.println("당신은 가위를 냈습니다.");
 			System.out.println("컴퓨터는 바위를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("당신은 졌습니다. ^ㅇ^");
 		}
-		else if(chi ==1 && com == 1) {
+		else if(chi ==1 && comp == 1) {
 			System.out.println("당신은 가위를 냈습니다.");
 			System.out.println("컴퓨터는 가위를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("비겼습니다. ㅇㅅㅇ");
 		}
-		else if(chi==2 && com ==3) {
+		//2.바위를 냈을 경우
+		else if(chi==2 && comp ==3) {
 			System.out.println("당신은 바위를 냈습니다.");
 			System.out.println("컴퓨터는 보를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("당신은 졌습니다. ^ㅇ^");
 		}
-		else if(chi ==2 && com == 2) {
+		else if(chi ==2 && comp == 2) {
 			System.out.println("당신은 바위를 냈습니다.");
 			System.out.println("컴퓨터는 바위를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("비겼습니다. ㅇㅅㅇ");
 		}
-		else if(chi ==2 && com == 1) {
+		else if(chi ==2 && comp == 1) {
 			System.out.println("당신은 바위를 냈습니다.");
 			System.out.println("컴퓨터는 가위를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("당신이 이겼습니다. ㅠ.ㅠ");
 		}
-		else if(chi==3 && com ==3) {
+		//3.보를 냈을 경우
+		else if(chi==3 && comp ==3) {
 			System.out.println("당신은 보를 냈습니다.");
 			System.out.println("컴퓨터는 보를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("비겼습니다. ㅇㅅㅇ");
 		}
-		else if(chi ==3 && com == 2) {
+		else if(chi ==3 && comp == 2) {
 			System.out.println("당신은 보를 냈습니다.");
 			System.out.println("컴퓨터는 바위를 냈습니다.");
 			System.out.println( "===================");
 			System.out.println("당신이 이겼습니다. ㅠ.ㅠ");
 		}
-		else if(chi ==3 && com == 1) {
+		else if(chi ==3 && comp == 1) {
 			System.out.println("당신은 보를 냈습니다.");
 			System.out.println("컴퓨터는 가위를 냈습니다.");
 			System.out.println( "===================");
