@@ -33,7 +33,10 @@ public class Test2 {
 		int total = kor+eng+math; 
 		double avg =  total/3.0;
 		
-		if((kor>=40&&eng>=40&&math>=40)&&avg>=60) {
+		boolean bool1 = kor>=40&&eng>=40&&math>=40;
+		boolean bool2 = avg >=60;
+		
+		if(bool1 && bool2) {
 			System.out.println("합격입니다.");
 		}
 		else {

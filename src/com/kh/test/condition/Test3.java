@@ -28,21 +28,30 @@ public class Test3 {
 		
 		System.out.print("연산자를 입력하세요: ");
 		char ch = sc.next().charAt(0);
+		int result = 0;
 		
 		if(ch == '+') {
-			System.out.println(num1 +"+" +num2 +"="+(num1+num2));
+			result = num1+num2;
 		}
 		else if(ch =='-'){
-			System.out.println(num1 +"-" +num2 +"="+(num1-num2));
+			result = num1-num2;
+			
 		}
 		else if(ch =='*'){
-			System.out.println(num1 +"*" +num2 +"="+(num1*num2));
+			result = num1*num2;
+			
 		}
 		else if(ch =='/'){
-			System.out.println(num1 +"/" +num2 +"="+(num1/num2));
+			result = num1/num2;
+			
 		}
 		else {
 			System.out.println("잘못 입력 하셨습니다.  프로그램을 종료합니다.");
 		}
+		
+		System.out.printf("입력값 > a=%d, b=%d, %c%n,",num1,num2,ch);
+		System.out.println(""+num1+ch+num2+"="+result);
+		
+		return;//모든 메소드 마지막에 생략된 구문
 	}
 }
