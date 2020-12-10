@@ -58,7 +58,9 @@ public class Test9 {
 		System.out.print("사이드메뉴를 선택하세요(1~4) > ");
 		int smenu = sc.nextInt();
 		
+		//총 가격을 담을 변수 sum
 		int sum =0;
+		//메인메뉴명과 사이드 메뉴명
 		String mmenuAlpa = "";
 		String smenuNo = "";
 		

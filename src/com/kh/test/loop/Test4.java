@@ -22,7 +22,7 @@ public class Test4 {
 			int sum = 0;
 			
 			for(int i =0; i<word.length();i++) {
-				
+				//루프를 돌때마다 alph에 단어의 한 글자씩 담긴다. i가 인덱스 번호임으로.
 				char alph = word.charAt(i);
 				
 				if(alph==ch) {
@@ -31,6 +31,8 @@ public class Test4 {
 			}
 			System.out.printf("'%s'가 포함된 갯수: %d",ch,sum);
 		}
+		
+		//영문자를 입력하지 않았을 경우
 		else {
 			System.out.println("영문자가 아닙니다.");
 		}
