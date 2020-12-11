@@ -12,7 +12,7 @@ public class Test4 {
 	public void test() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("문자열 입력 : ");
-		String word = sc.next();
+		String word = sc.next(); // apple_test123 _도 입력이 되게
 		System.out.print("검색할 문자 입력 :");
 		char ch = sc.next().charAt(0);
 		
