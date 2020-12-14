@@ -17,7 +17,7 @@ public class Test1 {
 		//증감변수
 		int i =0;
 		//홀수의 총 곱을 담을 변수
-		int total = 1;
+		long total = 1; //값이 한 없이 커질 수 있음으로 long타입
 		
 		while(i<=NUM) {
 			i++;

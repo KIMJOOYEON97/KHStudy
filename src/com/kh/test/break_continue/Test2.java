@@ -17,16 +17,16 @@ public class Test2 {
 		
 		int i = 0;
 		while (true) {
-			System.out.print("정수를 입력하세요 : ");
+			System.out.print("1에서 100사이의 정수를 입력하세요 : ");
 			user = sc.nextInt();
 			++i;
 			if(num<user) {
 				System.out.println("입력하신 정수보다 작습니다.");
-				continue;
+				//continue는 이하의 코드를 처리하지 않을 때 쓰는 것임으로 쓰지 않는 것이 나음
 			}
 			else if(num>user) {
 				System.out.println("입력하신 정수보다 큽니다.");
-				continue;
+				
 			}
 			else if(num==user) {
 				System.out.printf("정답입니다. %d회 만에 정답을 맞추셨습니다.",i);break;
