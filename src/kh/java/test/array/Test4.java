@@ -18,19 +18,25 @@ public class Test4 {
        - System.arraycopy() 매소드 이용
        - clone() 매소드 이용
        
+       
        */
        
 	public void test1() {
 		Scanner sc = new Scanner(System.in);
+		//1.사용자 문자열 입력받기
 		System.out.print("전화번호를 입력하세요 : ");
 		String phNum= sc.nextLine();
 		
+		//2. 문자열을 charArray로 바꾸기
 		char [] phoneNumber = new char[phNum.length()];
 		for(int i = 0 ; i < phNum.length(); i++) {
 			phoneNumber[i]=phNum.charAt(i);
 		}
-		
+		//3. 복제본 생성
 		char[] phoneNumer2 =phoneNumber.clone();
+		//for문으로 할 수 있음
+		//for(int i = 0, i <phoneNumber.length; i++){
+		//	if(i>2 && i<7) cArrCopy[i] = '*';
 		phoneNumer2[3]='*';
 		phoneNumer2[4]='*';
 		phoneNumer2[5]='*';
@@ -55,6 +61,7 @@ public class Test4 {
 		String back ="";
 		//substring은 처음 시작인덱스는 그대로이나 끝나는 인덱스는 +1을 해줘야한다. 
 		// 즉, 표기된 것보다 실제 인덱스는 -1이라는 것이다.
+		//시작인덱스는 포함되고 끝나는 인덱스는 포함한다.
 		front = phNum.substring(0, 3); //(0,1,2)
 		back =phNum.substring(7, 11); //(7,8,9,10)
 		

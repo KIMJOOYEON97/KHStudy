@@ -21,6 +21,7 @@ public class Test2 {
 		arr[3] = "사과";
 		arr[4] = "바나나";
 		
+		//값 출력
 		System.out.println(arr[4]);
 		
 	}

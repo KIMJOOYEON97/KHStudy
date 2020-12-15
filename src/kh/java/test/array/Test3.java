@@ -23,6 +23,8 @@ public class Test3 {
 		System.out.print("검색값 : ");
 		char ch = sc.next().charAt(0);
 		
+		//문자열을 charArray로 바꾸기
+		//char[] arr = user.toCharArray();
 		char[] arr = new char[user.length()];
 		
 		for(int i =0; i<user.length();i++) {

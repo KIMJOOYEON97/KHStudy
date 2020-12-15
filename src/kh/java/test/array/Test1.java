@@ -11,8 +11,10 @@ public class Test1 {
 	 */
 	public void test() {
 		
+		//배열선언
 		int arr[] = new int[100];
 		
+		//값 넣고 출력
 		for(int i = 0; i <arr.length;i++) {
 			arr[i] = i+1;
 			System.out.print(arr[i]+" ");

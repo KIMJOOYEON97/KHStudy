@@ -21,18 +21,23 @@ public class Test5 {
  */
 	public void test() {
 		Scanner sc = new Scanner(System.in);
+		//1. 주민번호 입력(문자열)
 		System.out.print("주민등록변호를 입력하세요.:");
-		String  num = sc.next();
+		String  num = sc.nextLine();
 		
+		//2.char[] 원본배열로 옮기기
+		//char[] juArr = ju.toCharArray(); 문자열을 char 배열로 리턴
 		char[] number = new char[num.length()];
 		for(int i = 0; i<num.length();i++) {
 			number[i]=num.charAt(i);
 		}
-		char[] number2 = new char[number.length];
 		
+		//3.char[] 복사본 생성
+		char[] number2 = new char[number.length];
+		//복사본 생성과 동시에 4. 해당자리를 *로 변경
 		for(int i =0; i<num.length();i++) {
 			number2[i] = number[i];
-			if(i<6) {
+			if(i<7) {
 				System.out.print(number2[i]);
 			}
 			else {
