@@ -1,0 +1,12 @@
+package kh.java.oop.access.modifier_class.run;
+
+import kh.java.oop.access.modifier_class.Apple;
+
+public class FruitRun {
+	public static void main(String[] args) {
+		new Apple();
+		//default class는 다른 패키지에서 접근할 수 없다.
+//		new PineApple(); 
+	}
+
+}
