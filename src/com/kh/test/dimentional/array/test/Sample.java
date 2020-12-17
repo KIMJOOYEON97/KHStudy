@@ -40,14 +40,14 @@ public class Sample {
 				sum += arr[i][j];
 				}
 			if(sum%5 ==0) {
-				//얕은 복사로 같은 배열 공유
-				int[][] arr2 = arr;
+				//얕은 복사로 같은 배열 공유 =>안해도 작동 한다.
+//				int[][] arr2 = arr;
 //				5의 배수 출력
 //				System.out.println(sum);				
 				for(int i1 = 0 ; i1 <1;i1++) {
-					for(int j = 0; j <arr2[0].length;j++) {
+					for(int j = 0; j <arr[0].length;j++) {
 						//같은 배열을 공유하는 arr2의 행열 값 출력
-						System.out.print(arr2[i][j]+" ");
+						System.out.print(arr[i][j]+" ");
 					}
 					System.out.println();
 				}

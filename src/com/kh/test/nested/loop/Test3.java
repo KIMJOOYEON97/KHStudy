@@ -36,6 +36,10 @@ public class Test3 {
 				for(int i = 0; i <num;i++) {
 					for(int j = 0; j <num; j++) {
 						if(i>=j) {
+							//마지막 줄은 공백 출력 안함
+							if(i == num-1) {
+								break;
+							}
 							System.out.print(" ");
 						}
 						else {

@@ -8,20 +8,29 @@ public class Test2 {
 		Test2 t2 = new Test2();
 		t2.test();
 	}
-	
 	public void test() {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("정수 입력 : ");
-		int num = sc.nextInt();
-		
-		outer:
-		for(int i = 0 ; i <num; i++) {
-			for(int j = 1; j<=num ; j++) {
-				System.out.print("*");
-				if(num-i ==j) {
-					System.out.println();
-					continue outer;
+		while(true) {
+			Scanner sc = new Scanner(System.in);
+			System.out.print("정수 입력 : ");
+			int num = sc.nextInt();
+			
+			if(num <=0) {
+				return; //조기 리턴 처리
+			}
+			outer:
+			for(int i = 0 ; i <num; i++) {
+				for(int j = 1; j<=num ; j++) {
+					System.out.print("*");
+					if(num-i ==j) {
+						System.out.println();
+						continue outer;
+					}
 				}
+			}
+			System.out.print("프로그램 계속하시겠습니까? 1.계속  0. 종료: ");
+			int user = sc.nextInt();
+			if(user==0) {
+				System.exit(0);
 			}
 		}
 	}
@@ -33,7 +42,7 @@ public class Test2 {
 //
 //출력예)
 //정수 입력 : 5
-//*****
+//***** num-i 반복
 //****
 //***
 //**
