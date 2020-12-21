@@ -24,10 +24,7 @@ public class Employee {
 	}
 	
 	public Employee(int empNo, String name, char gender,String dept, String phone, int salary, double bonusPct) {
-		this.empNo= empNo;
-		this.name= name;
-		this.gender= gender;
-		this.phone= phone;
+		this(empNo,name,gender,dept);
 		this.salary = salary;
 		this.bonusPct = bonusPct;
 	}

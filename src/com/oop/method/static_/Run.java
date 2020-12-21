@@ -8,7 +8,7 @@ public class Run {
 		
 		Run r= new Run();
 //		r.test1();
-//		r.test2();
+		r.test2();
 //		r.test3();
 		r.test4();
 		
