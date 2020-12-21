@@ -13,11 +13,18 @@ public class Run {
 		e.setBonusPct(100000);
 		e.printEmployee();
 		
-		Employee e2 = new Employee(13,"김현지",'여',"01098765432","마케팅부",4000000,100000.0);
+		Employee e2 = new Employee();
+		e2.setEmpNo(13);
+		e2.setName("김흥도");
+		e2.setGender('남');
+		e2.setPhone("01056432345");
 		e2.printEmployee();
 		
-		Employee e3 = new Employee(15, "장영실", '남', "01065439876");
+		Employee e3 = new Employee(14,"김현지",'여',"01098765432","마케팅부",4000000,100000);
 		e3.printEmployee();
+		
+		Employee e4 = new Employee(15, "장영실", '남', "01065439876");
+		e4.printEmployee();
 	}
 
 }
