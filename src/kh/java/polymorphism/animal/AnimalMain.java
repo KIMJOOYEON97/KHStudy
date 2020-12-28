@@ -16,7 +16,23 @@ public class AnimalMain {
 //		am.test5();
 //		
 		//동적바인딩
-		am.test6();
+//		am.test6();
+		
+		am.test7();
+		
+	}
+	
+	public void test7() {
+//		Animal a = new Animal();//Cannot instantiate the type Animal
+		Animal a = new Cat();
+		Animal b = new Dog();
+		Animal c = new Tiger();
+		//추상클래스 Animal을 상속한 자식클래스는 
+		//무조건 추상메소드 attack구현을 보장받는다. 
+		a.attack();
+		b.attack();
+		c.attack();
+		c.say();
 		
 	}
 	/**
@@ -112,8 +128,9 @@ public class AnimalMain {
 		Animal[] arr = new Animal[3]; //Animal만 상속했다면 이 배열에 다 들어올 수 있다.
 		arr[0]=new Cat();
 		arr[1]=new Dog();
-		arr[2]=new Animal();
-		
+//		arr[2]=new Animal(); //new Animal => instantiate(객체화 하는 것)
+							// 추상 클래스로는 객체를 만들수 없다
+		arr[2]=new Cat();
 		
 		System.out.println(arr[0] instanceof Cat);  	//true
 		System.out.println(arr[0] instanceof Dog);		//false
