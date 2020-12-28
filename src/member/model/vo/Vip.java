@@ -12,7 +12,6 @@ public class Vip extends Member{
 		// TODO Auto-generated constructor stub
 	}
 	
-
 	
 	@Override
 	public double getEjapoint() {

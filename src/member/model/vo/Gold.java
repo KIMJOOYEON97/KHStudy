@@ -16,8 +16,6 @@ public class Gold extends Member{
 		this.point = point;
 	}
 	
-
-	
 	
 	@Override
 	public double getEjapoint() {
