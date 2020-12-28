@@ -28,8 +28,11 @@ public class Head extends Body {
 	public void headBang() {
 		System.out.println(hairColor+"색 머리를 돌립니다.");
 	}
-	public void action() {
+
+	@Override
+	public void action(Body body) {
 		headBang();
+		
 	}
 
 }

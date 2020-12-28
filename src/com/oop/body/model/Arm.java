@@ -11,7 +11,9 @@ public class Arm extends Body{
 		System.out.println("팔을 뻗습니다.");
 	}
 	
-	public void action() {
+
+	@Override
+	public void action(Body body) {
 		armSwing();
 	}
 }

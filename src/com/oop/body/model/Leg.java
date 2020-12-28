@@ -10,8 +10,10 @@ public class Leg extends Body {
 	public void run() {
 		System.out.println("성큼성큼 뛰어갑니다.");
 	}
-	public void action() {
-		run();
+
+	@Override
+	public void action(Body body) {
+		run();		
 	}
 
 }
