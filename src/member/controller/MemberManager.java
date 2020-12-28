@@ -11,39 +11,30 @@ public class MemberManager {
 	
 	private int index = 0;
 	
-	
-	public void Insert(Silver s) {
-		arrM[index++] = s;
+	//Silver s객체를 생성 매개변수로 받아서 arrM에 넣는다.
+	public void Insert(Member m) {
+		arrM[index++] = m;
 	}
-	
-	public void Insert(Gold g) {
-		arrM[index++] = g;
-	}
-	
-	public void Insert(Vip v) {
-		arrM[index++] = v;
-	}
-	
-	public void Insert(VVip vv) {
-		arrM[index++] = vv;
-	}
-
 	
 	public void printData() {
 		System.out.println("----------------------------------------<<회원정보>>-----------------------------------------");
 		System.out.printf("%-15s %-15s %-15s %-15s\n", "이름","등급","포인트","이자포인트");
 		System.out.println("------------------------------------------------------------------------------------------------");
+		//이렇게 해도 Silver Gold Vip VVip 순으로 나옴 왜냐하면 index 순서로 나오니까.
 		for(int i=0; i<index;i++) {
-			System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());			
+			if(arrM[i] instanceof Gold) {
+				System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());							
+			}
+			else if(arrM[i] instanceof Vip) {
+				System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());							
+			}
+			else if(arrM[i] instanceof Silver) {
+				System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());							
+			}
+			else if(arrM[i] instanceof VVip) {
+				System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());							
+			}
 		}
-		for(int i=0; i<index;i++) {
-			System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());
-		}
-		for(int i=0; i<index; i++){
-			System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());
-		}
-		for(int i=0; i<index; i++){
-			System.out.printf("%-15s %-15s %-15d %-15.2f\n", arrM[i].getName(), arrM[i].getGrade(), arrM[i].getPoint(), arrM[i].Interest());
-		}
+		
 	}
 }
