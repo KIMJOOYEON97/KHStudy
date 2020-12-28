@@ -11,7 +11,6 @@ public class MemberManager {
 	
 	private int index = 0; //1. 다음 member 객체의 index 2.현재까지 입력된 member수
 	
-	//Silver s객체를 생성 매개변수로 받아서 arrM에 넣는다.
 	public void Insert(Member m) {
 		arrM[index++] = m; //1번의 의미
 	}

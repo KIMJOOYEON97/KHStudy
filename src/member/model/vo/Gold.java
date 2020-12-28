@@ -16,12 +16,10 @@ public class Gold extends Member{
 		this.point = point;
 	}
 	
-//	@Override
-//	public double Interest() {
-//		return getEjapoint();
-//	}
+
 	
 	
+	@Override
 	public double getEjapoint() {
 		return getPoint()*0.05;
 	}

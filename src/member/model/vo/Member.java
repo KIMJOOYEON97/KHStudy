@@ -1,6 +1,6 @@
 package member.model.vo;
 
-public class Member {
+public abstract class Member {
 
 	/*protected로 지정하면 자식 클래스에서 직접 접근 가능하다.
 	 * private - default - protected - public
@@ -46,9 +46,7 @@ public class Member {
 	}
 	
 	//보너스 이자를 부모 클래스에서 만들어둠
-	public double getEjapoint() {
-		return point;
-	}
+	public abstract double getEjapoint();
 	
 	
 	

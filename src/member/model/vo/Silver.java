@@ -12,11 +12,7 @@ public class Silver extends Member {
 		// TODO Auto-generated constructor stub
 	}
 
-//	@Override
-//	public double Interest() {
-//		return getEjapoint();
-//	}
-	
+	@Override
 	public double getEjapoint() {
 		return getPoint()*0.02;
 	}
