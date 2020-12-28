@@ -12,10 +12,10 @@ public class VVip extends Member{
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Override
-	public double Interest() {
-		return getEjapoint();
-	}
+//	@Override
+//	public double Interest() {
+//		return getEjapoint();
+//	}
 	
 	public double getEjapoint() {
 		return getPoint()*0.15;

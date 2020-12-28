@@ -46,7 +46,7 @@ public class Member {
 	}
 	
 	//보너스 이자를 부모 클래스에서 만들어둠
-	public double Interest() {
+	public double getEjapoint() {
 		return point;
 	}
 	
