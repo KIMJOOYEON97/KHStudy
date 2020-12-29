@@ -25,7 +25,7 @@ public class Run {
 //		System.out.println(sep[0]); 확인용
 
 		//분리된 정보를 담을 배열 
-		String[] input = new String[15];
+		String[] input = new String[100];
 		//정보를 분리함
 		int j = 0;
 		for(int i = 0; i<sep.length;i++) {
@@ -42,17 +42,21 @@ public class Run {
 		//객체에 대입
 		int m = 0;
 		for(int x = 0; x<input.length;x+=5) {
-			member[m] =new Member(Integer.parseInt(input[x]),
-									input[x+1],
-								  Integer.parseInt(input[x+2]),
-								  Integer.parseInt(input[x+3]),
-								  (toCal(input[x+4])));	
-			m++;
+			if(input[x]!=null) {
+				member[m] =new Member(Integer.parseInt(input[x]),
+						input[x+1],
+						Integer.parseInt(input[x+2]),
+						Integer.parseInt(input[x+3]),
+						(toCal(input[x+4])));	
+				m++;				
+			}
 			
 		}
 		
 		for(int p=0;p<member.length;p++) {
-			System.out.println(member[p].information());
+			if(member[p] != null) {
+				System.out.println(member[p].information());				
+			}
 			
 		}
 	
