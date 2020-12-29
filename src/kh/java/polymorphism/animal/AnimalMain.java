@@ -18,8 +18,67 @@ public class AnimalMain {
 		//동적바인딩
 //		am.test6();
 		
-		am.test7();
+		//추상메소드
+//		am.test7();
 		
+		am.test8();
+	}
+	/**
+	 * 인터페이스는 객체화 할 수 없다
+	 * 인터페이스 역시 부모타입으로 다형성을 적용할 수 있다.
+	 * 
+	 */
+	
+	public void test8() {
+//		Runnable r = new Runnable; //Cannot instantiate the type Runnable
+		
+		Runnable r1 = new Dog(); //r1에 구현 클래스 자체(Dog에 객체)가 들어가 있다.
+		Runnable r2 = new Cat();
+		
+		r1.run(); //Runnable의 추상메소드를  믿고 쓸 수 있다. 당연히 가지고 있다.
+		r2.run();
+		
+		//자식객체의 메소드를 쓸 수 없다
+//		r1.say();  		//Animal 재작성메소드 say
+//		r1.attack();	//Animal 재작성메소드 attack
+//		r1.kick();		//Dog의  kick
+		
+		((Dog)r1).say();  
+		((Dog)r1).attack();
+		((Dog)r1).kick();
+		
+		//상수 
+		System.out.println(Runnable.LEGS);
+		
+		Bitable b1 = new Dog();
+		Bitable b2 = new Cat();
+		b1.bite("멍멍");
+		b2.bite("야옹");
+		
+		System.out.println("-----------------------");
+		
+//		b1.//object 메소드 말고는 bite밖에 못씀
+		Dog d1 =(Dog)b1;  //자식클래스가 더 넓다.
+		d1.bite("멍멍");
+		d1.kick();
+		d1.attack();	  //오버라이딩
+		d1.say();
+		
+		System.out.println("-----------------------");
+	
+		Animal a1 = d1;
+		a1.attack();
+		a1.say();
+		
+		Flyable f1 = new Eagle();
+		f1.fly("펄럭펄럭");
+//		f1.attack;
+		Eagle e = (Eagle)f1;
+		e.attack();
+		e.fly("훨훨");
+		Animal a2 = e;
+		a2.attack();
+//		a2.fly();
 	}
 	
 	public void test7() {
