@@ -7,6 +7,6 @@ public abstract class Body {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public abstract void action(Body body);
+	public abstract void action();
 
 }

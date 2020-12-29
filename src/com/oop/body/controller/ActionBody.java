@@ -26,9 +26,25 @@ public class ActionBody {
 			else body[i] =new Leg();
 		}
 		
+		//동적바인딩
 		for(Body b: body) {
-			b.action(b);  //이렇게 쓸 일이 없지 않나?? ->method의 test참고
+			b.action();  
+			
 		}
+		ActionBody ab = new ActionBody();	
+		System.out.println("------------------");
+		//메인메소드내 action 메소드 실행
+		for(Body b1 : body)
+			ab.action(b1);
 	}
-	
+	//Body 타입을 변수로 사용하는 action 메소드
+		//instanceof로 타입변경하고 각 클래스의 메소드 실행
+		public void action(Body body) {
+			if(body instanceof Head)
+				((Head)body).headBang();
+			else if (body instanceof Arm)
+				((Arm)body).armSwing();
+			else if (body instanceof Leg)
+				((Leg)body).run();
+		}
 }

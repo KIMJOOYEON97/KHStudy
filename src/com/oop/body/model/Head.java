@@ -30,7 +30,7 @@ public class Head extends Body {
 	}
 
 	@Override
-	public void action(Body body) {
+	public void action() {
 		headBang();
 		
 	}

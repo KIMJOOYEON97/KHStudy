@@ -21,8 +21,24 @@ public class AnimalMain {
 		//추상메소드
 //		am.test7();
 		
-		am.test8();
+		//인터페이스
+//		am.test8();
+		am.test9();
 	}
+	
+	public void test9() {
+		Eagle e1 = new Eagle();
+		Flyable e2 = new Eagle();
+		Animal e3 = new Eagle();
+		
+		e1.attack();
+		e1.fly("푸드득");
+		
+		e2.fly("푸더더덕");
+		
+		e3.attack();
+	}
+	
 	/**
 	 * 인터페이스는 객체화 할 수 없다
 	 * 인터페이스 역시 부모타입으로 다형성을 적용할 수 있다.

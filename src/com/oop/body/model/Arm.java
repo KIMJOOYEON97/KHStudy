@@ -13,7 +13,7 @@ public class Arm extends Body{
 	
 
 	@Override
-	public void action(Body body) {
+	public void action() {
 		armSwing();
 	}
 }

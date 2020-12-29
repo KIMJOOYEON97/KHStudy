@@ -12,7 +12,7 @@ public class Leg extends Body {
 	}
 
 	@Override
-	public void action(Body body) {
+	public void action() {
 		run();		
 	}
 
