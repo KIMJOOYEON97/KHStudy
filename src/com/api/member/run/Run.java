@@ -42,7 +42,7 @@ public class Run {
 		//객체에 대입
 		int m = 0;
 		for(int x = 0; x<input.length;x+=5) {
-			if(input[x]!=null) {
+			if(input[x]!=null) { //NullException 방지
 				member[m] =new Member(Integer.parseInt(input[x]),
 						input[x+1],
 						Integer.parseInt(input[x+2]),
@@ -54,7 +54,7 @@ public class Run {
 		}
 		
 		for(int p=0;p<member.length;p++) {
-			if(member[p] != null) {
+			if(member[p] != null) {//NullException 방지
 				System.out.println(member[p].information());				
 			}
 			
