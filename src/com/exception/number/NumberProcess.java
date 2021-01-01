@@ -8,7 +8,7 @@ public class NumberProcess {
 
 	public boolean checkDouble(int a, int b)  {
 			try {
-				if(a>100 && b>100) 
+				if(!((a>0&&a<=100)&&(b>0&&b<=100))) 
 					throw new NumberRangeException();				
 				else 
 					if(b%a == 0) 

@@ -1,5 +1,6 @@
 package com.exception.rnd;
 
+import java.io.ObjectInputStream.GetField;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,9 +8,7 @@ public class NumberOk {
 
 	
 	private static Scanner sc = new Scanner(System.in);
-	//임의의 정수 발생 ->한 번밖에 안되는데 어떻게해야 여러번 가능한지 모르겠다.
-	Random rnd = new Random();
-	int num = rnd.nextInt(100)+1;
+	private static int count,rnd;
 	
 	
 	public static void main(String[] args) {
@@ -21,9 +20,8 @@ public class NumberOk {
 //		값을 맞히면 "맞았습니다." 출력하고, 몇번째에 맞혔는지도 출력
 //		계속 할 것인지 물어서, y 이면 계속, n 이면 종료시킴
 		char choice =' ';
-		int count = 0;
 		
-		
+		getRandomNumber();
 		while(true) {
 			
 			while(true) {
@@ -37,7 +35,8 @@ public class NumberOk {
 					System.out.println(count+"번만에 맞았습니다.");
 				default:
 					System.out.print("계속 하시겟습니까?(y/n)");}
-				choice = sc.next().charAt(0);
+					choice = sc.next().charAt(0);
+					getRandomNumber();
 				if(choice == 'n') {
 					System.out.println("프로그램을 종료합니다.");break;}
 			}
@@ -45,13 +44,11 @@ public class NumberOk {
 			
 			}
 			
-	
 		
 	public int getName() {
 		
 		while(true) {
 			try {
-				Scanner sc = new Scanner(System.in);
 				System.out.print("정수 입력 :");
 				int user = sc.nextInt();
 				
@@ -64,12 +61,20 @@ public class NumberOk {
 		}	
 	}
 
+	public static void getRandomNumber() {
+		//임의의 정수 발생 ->한 번밖에 안되는데 어떻게해야 여러번 가능한지 모르겠다. ->함수로 처리
+		rnd = new Random().nextInt(100)+1;
+		
+		count = 0;
+		
+	}
+	
 	public int checkNumber(int user) {
 //		System.out.println(num);
-		if(num>user) {
+		if(rnd>user) {
 			return 1;
 		}
-		else if(num==user) {
+		else if(rnd==user) {
 			return 0;
 		}
 		else {
