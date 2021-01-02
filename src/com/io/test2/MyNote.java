@@ -25,6 +25,9 @@ public class MyNote {
 	
 	
 	public void fileSave() {
+		
+		sc.nextLine(); //문자날림
+		
 		//2. StringBuilder 를 사용하여 문자열을 반복해서 입력받아 추가함
 		StringBuilder sb = new StringBuilder();
 		while(true) {
@@ -57,6 +60,8 @@ public class MyNote {
 				//7. "oooo.txt 파일에 성공적으로 저장하였습니다." 출력
 				
 				System.out.println(fileName+".txt 파일에 성공적으로 저장하였습니다.");
+				
+			
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -90,10 +95,14 @@ public class MyNote {
 		System.out.print("수정할 파일명 :");
 		String fileName = sc.next();
 		File fm = new File(fileName+".txt");
+		
+		sc.nextLine(); //문자날림
+		
 		//2. 파일 입력 스트림 생성
 		//3. 파일 출력 스트림 생성 
 		
 		StringBuilder abbsb = new StringBuilder();
+//		sc.nextLine(); //문자날림 요기서 문자날림을 하면 화면출력이 안된다.
 		
 		try(
 			BufferedReader brm = new BufferedReader(new FileReader(fm));
@@ -104,11 +113,11 @@ public class MyNote {
 			String data = null;
 			while((data = brm.readLine()) != null) {
 				System.out.println(data);
-				abbsb.append(data); // 단, 기존 내용 둔 상태로 생성할 것
+				abbsb.append(data+"\n"); // 단, 기존 내용 둔 상태로 생성할 것
 				//abbsb에 기존내용을 추가해둠
 			}
 		}catch(EOFException e) {
-			
+			System.out.println("오류남");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
