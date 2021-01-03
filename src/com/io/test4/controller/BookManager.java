@@ -29,7 +29,7 @@ public class BookManager {
 		try(
 			ObjectOutputStream oos =
 				new ObjectOutputStream( //객체형식으로 쓸 것
-					new BufferedOutputStream( //성능좋은 출력 튜닝
+					new BufferedOutputStream( //성능좋은 입력 튜닝
 						new FileOutputStream(f))); //byte주 스트림
 		){
 			Calendar c1 = new GregorianCalendar(2007,2,17);
@@ -71,9 +71,10 @@ public class BookManager {
 			
 			//for문으로 출력
 			for(int i = 0 ;i <books.length; i++) {
-				if(books[i] == null) { //왜 null이 되어야 출력이 되는지 모르겠음
+//				if(books[i] == null) { //왜 null이 되어야 출력이 되는지 모르겠음 => 조건식이 필요 없음
+//				Books[] arr = new Book[10];  배열 생성직후 모든 배열공간은 null입니다.  arr[i] 접근하면 null 인거죠.
 					System.out.println(ois.readObject());
-				}
+//				}
 			}
 			
 			//while문으로 출력
