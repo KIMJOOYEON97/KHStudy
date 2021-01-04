@@ -36,19 +36,23 @@ public class ArrayListTest {
 		//기본정렬 : 학번오름차순
 //		Collections.sort(list); // 오류가 나는 이유는 Student가 Comparable을 갖추고 있지 않음
 		list.sort(null); //기본정렬인 경우 Comparator객체가 필요치 않다.
+		Collections.sort(list);
 		
 		//학번 내림차순
 //		Collections.sort(list, Collections.reverseOrder());
+		list.sort(Collections.reverseOrder());
 		
 		
 		//추가적인 정렬기준 생성
 		//1. 이름오름차순
 //		Comparator<Student> comp = new StudentNameAscending();
 //		Collections.sort(list, comp);
+//		list.sort(comp);
 		
 		//2. 이름내림차순
-//		Comparator<Student> comp = new StudentNameAscending();
+		Comparator<Student> comp = new StudentNameAscending();
 //		Collections.sort(list, comp.reversed());
+//		list.sort(comp.reversed());
 		
 		System.out.println(list);
 	}
