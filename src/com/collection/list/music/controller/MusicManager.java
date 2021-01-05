@@ -87,6 +87,7 @@ public class MusicManager{
 	
 //	8.서브메뉴 - 각 정렬 메소드 : Comparable/Comparator 인터페이스를 적절히 활용할 것
 	public List <Music> orderby(Comparator<Music> c){
+		List<Music> mList = (List<Music>)((ArrayList) this.mList).clone();
 		mList.sort(c);
 		return mList;
 	}

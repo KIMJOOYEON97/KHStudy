@@ -35,12 +35,12 @@ public class MusicMenu {
 			int choice;
 			try {
 				System.out.print(menu);
-				choice = sc.nextInt();
+				choice = sc.nextInt();//공백 개행문자 전까지 읽음. 개행문자가 남은 상태
 			}catch(Exception e) {
 				System.out.println("잘못 입력하였습니다.");
 				return;
 			}
-			sc.nextLine(); 
+			sc.nextLine(); //개행문자까지 읽어와서 개행문자 제외하고 반환
 			//이거 때문에 연달아 나오게 된게 왜 그런건지 이해가 안된다.....왜 여기에 이게 들어가야만하지?
 			
 			if(choice == 1) {
@@ -78,7 +78,7 @@ public class MusicMenu {
 				
 			else if(choice == 8){sortMenu();}
 				
-			else if(choice == 0){System.out.println("프로그램 종료");break;}
+			else if(choice == 0){System.out.println("프로그램 종료");System.exit(0);}
 			}
 		}
 	

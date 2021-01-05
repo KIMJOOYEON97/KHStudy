@@ -16,7 +16,7 @@ public class ArrayListTest {
 //		a.test0();
 //		a.test1();
 //		a.test2();
-//		a.test3();
+		a.test3();
 //		a.test4();
 //		a.test5();
 		a.test6();
@@ -163,11 +163,11 @@ public class ArrayListTest {
 //		list.remove(2);
 		//객체를 전달해 삭제하려면 , 전달한 객체와 저장된 객체의 동등성을 인정받아야 한다.
 		//두 객체의 equals 비교 결과가 true가 나오도록 equals 오버라이딩해야한다.
-		System.out.println(new Student(3,"세종대왕").equals(new Student(3,"세종대왕")));
-		System.out.println(list.remove(new Student(3,"세종대왕")));
+//		System.out.println(new Student(3,"세종대왕").equals(new Student(3,"세종대왕")));
+//		System.out.println(list.remove(new Student(3,"세종대왕")));
 		
-		System.out.println(new Student(3,"세종대왕").hashCode());
-		System.out.println(new Student(3,"세종대왕").hashCode());
+//		System.out.println(new Student(3,"세종대왕").hashCode());
+//		System.out.println(new Student(3,"세종대왕").hashCode());
 		
 		list.remove(new Student(3,"세종대왕"));
 		
