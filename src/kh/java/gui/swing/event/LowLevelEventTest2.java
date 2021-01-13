@@ -30,6 +30,14 @@ public class LowLevelEventTest2 extends JFrame{
 	}
 
 	private void initCenterPanel() {
+		JPanel panel  = new JPanel();
+		textArea = new JTextArea(5,20);
+		panel.add(textArea);
+		add(panel);
+		
+	}
+
+	private void initTopPanel() {
 		JPanel panel = new JPanel();
 		panel.add(new JLabel("사용자 입력 : "));
 		input = new JTextField(10);
@@ -38,14 +46,6 @@ public class LowLevelEventTest2 extends JFrame{
 		
 		//이벤트핸들러 추가
 		input.addKeyListener(new MyKeyListener());
-		
-	}
-
-	private void initTopPanel() {
-		JPanel panel  = new JPanel();
-		textArea = new JTextArea(5,20);
-		panel.add(textArea);
-		add(panel);
 	}
 
 	public class MyKeyListener implements KeyListener{

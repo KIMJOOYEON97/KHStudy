@@ -26,7 +26,7 @@ public class CustomPanel extends JPanel{
 		
 		JPanel linkPanel = new JPanel();
 		JButton btn0 = new JButton("0"); //이 버튼을 누르면 다음 패널로 넘어가려고 
-		JButton btn1 = new JButton("1");
+		JButton btn1 = new JButton("1"); 
 		JButton btn2 = new JButton("2");
 		linkPanel.add(btn0);
 		linkPanel.add(btn1);
