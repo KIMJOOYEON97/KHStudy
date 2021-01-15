@@ -56,7 +56,7 @@ public class Q2 extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "A선택.");
-				new Ttm().setSumPrice(5);
+				new Ttm().setSumPrice(0);
 				new Q3(540, 960, "Q3").setVisible(true);
 			}
 			
@@ -67,7 +67,7 @@ public class Q2 extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "B선택.");
-				new Ttm().setSumPrice(3);
+				new Ttm().setSumPrice(1);
 				new Q3(540, 960, "Q3").setVisible(true);
 			}
 			
@@ -78,7 +78,7 @@ public class Q2 extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "C선택.");
-				new Ttm().setSumPrice(2);
+				new Ttm().setSumPrice(3);
 				new Q3(540, 960, "Q3").setVisible(true);
 			}
 			
@@ -89,7 +89,7 @@ public class Q2 extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "D선택.");
-				new Ttm().setSumPrice(0);
+				new Ttm().setSumPrice(5);
 				new Q3(540, 960, "Q3").setVisible(true);
 			}
 			
@@ -130,6 +130,6 @@ public class Q2 extends JFrame{
 	}
 
 	public static void main(String[] args) {
-		new Q2(540,960,"Q1").setVisible(true);
+		new Q2(540,960,"Q2").setVisible(true);
 	}
 }

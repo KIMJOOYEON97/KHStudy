@@ -32,7 +32,7 @@ import todayToMe.view.TtmMainview.ImagePanel;
 public class Q11 extends JFrame{
 	
 	private TtmController controller = new TtmController();
-	private String imagename = "8.png";
+	private String imagename = null;
 	
 	int addPrice = TtmSum.getAddPrice();
 	int addTemp = TtmSum.getAddTemp();
@@ -55,9 +55,8 @@ public class Q11 extends JFrame{
 			return imagename ="6.png";
 		else if((addPrice>=7&&addPrice<=9)&&addTemp<=5)
 			return imagename ="7.png";
-		else if(addPrice>=3)
+		else 
 			return imagename ="8.png";
-		return imagename;
 	}
 
 	
@@ -74,18 +73,23 @@ public class Q11 extends JFrame{
 		//버튼 원하는 위치에 둘려면 필요함
 		panel.setLayout(null);
 		
+		Font font = new Font("맑은 고딕",Font.BOLD,30);
+		
+		
+		JTextArea outputname = new JTextArea(20,5);
+		
+		List<String> list = controller.loadName();
+		System.out.println(list);//확인용
+		for(String s : list)
+			outputname.append(s);
+		
+		
+		panel.add(outputname);
+		
+		add(panel,BorderLayout.SOUTH);
 		add(panel);
 		pack();
 		
-		Font font = new Font("맑은 고딕",Font.BOLD,30);
-		
-		String s = controller.loadName();
-		
-		JLabel nameout = new JLabel(s+"님께 추천하는 향수는?");
-		nameout.setFont(font);
-		nameout.setBackground(new Color(204,204,204));
-	
-		add(nameout,BorderLayout.SOUTH);
 	}
 	
 	public class ImagePanel extends JPanel {

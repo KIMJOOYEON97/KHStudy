@@ -24,15 +24,11 @@ public class  LoadingGif {
       }
     });
     //결과 확인 나중에 나오게.
-    Thread.sleep(3000);
+    Thread.sleep(4000);
     new ResultCheck(540, 960, "ResultCheck").setVisible(true);
     
   }
 }
-
-//class resultcheck extends Thread{
-	
-//}
 
 
 class ImagePanel extends JPanel {

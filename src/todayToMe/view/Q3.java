@@ -128,6 +128,6 @@ public class Q3 extends JFrame{
 	}
 
 	public static void main(String[] args) {
-		new Q3(540,960,"Q1").setVisible(true);
+		new Q3(540,960,"Q3").setVisible(true);
 	}
 }

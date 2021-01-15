@@ -23,7 +23,7 @@ import todayToMe.io.TtmIO;
 import todayToMe.model.vo.Ttm;
 import todayToMe.util.TtmUtil;
 
-//사용자에게 맨 처음 보여지는 화면
+
 public class Q9 extends JFrame{
 		
 	JTextArea username;
@@ -75,11 +75,6 @@ public class Q9 extends JFrame{
 					e1.printStackTrace();
 				}
 				JOptionPane.showMessageDialog(null, "입력완료");
-		
-				
-//				new Q10(540,960,"Q10").setVisible(true);
-				
-				
 			}
 		});
 	}
@@ -109,7 +104,6 @@ public class Q9 extends JFrame{
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			
 			//img 객체를 x,y값만큼 떨어트려 그리기
 			//boolean java.awt.Graphics.drawImage(Image img, int x, int y, ImageObserver observer)
 			g.drawImage(image, 0,0, null);

@@ -56,10 +56,6 @@ public class TtmMainview extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				//Ttm ttm = new Ttm(sumPrice, sumTemp, sumSocial, sumIndividual);
-				Ttm ttm = new Ttm(0, 0, 0, 0);
-				
 				//다음 클래스로 갈 수 있는 방법 찾음.
 				new Q1(540, 960, "Q1").setVisible(true);
 				JOptionPane.showMessageDialog(null, "Test start. \n 질문을 읽고 A~D사이의 선택지 중 \n하나만 고르세요");

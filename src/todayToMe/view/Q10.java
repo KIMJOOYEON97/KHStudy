@@ -11,58 +11,27 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import todayToMe.controller.Loading;
 import todayToMe.util.TtmUtil;
 import todayToMe.view.Q3.ImagePanel;
 
-public class Q10 extends JFrame  {
-	private JFrame parent;
-	ImagePanel panel = new ImagePanel("Q10.png");
-//	ImagePanel panel1 = new ImagePanel("Q10_1.png");
-	public Q10(int w, int h, String title) {
-	
-		TtmUtil.init(this, w, h, title);
-	
-		ImagePanel panel = new ImagePanel("image/Q10.png");
-	
-		add(panel);
-		pack();
-		
+public class Q10 extends JPanel{
+	   private JFrame parent;   //접근제어자  Jframe 
+	   private BufferedImage image;
+	   
+	   public Q10(JFrame paent) {
+	      this.parent=parent;
+	      try {
+	         image= ImageIO.read(new File("images/loading.gif"));      //파일이미지 읽기 
+	         
+	      }catch(IOException e) {
+	         e.printStackTrace();
+	      }
+	   }
+	   @Override
+	   public void paintComponent(Graphics g) {
+	       super.paintComponent(g);
+	       if (image != null) {
+	         g.drawImage(image, 0, 0, this);
+	       }
+	     }
 	}
-
-	public class ImagePanel extends JPanel{
-			
-			private BufferedImage image;
-			private int w;
-			private int h;
-			
-			public ImagePanel(String fileName) {
-				try {
-					image = ImageIO.read(new File(fileName));
-					w = image.getWidth();
-					h = image.getHeight();
-				}catch(IOException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			@Override
-			public Dimension getPreferredSize() {
-				return new Dimension(w,h);
-				
-			}
-			@Override
-			public void paintComponent(Graphics g) {
-				super.paintComponent(g);
-				
-				g.drawImage(image,0,0,null);
-			}
-			
-			
-		}
-			
-		
-	public static void main(String[] args) {
-		new Q10(540,1000,"Q10").setVisible(true);
-	}
-}

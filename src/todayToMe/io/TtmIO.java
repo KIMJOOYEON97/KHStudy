@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,17 +25,6 @@ public class TtmIO {
 				while(true) {
 					nameList.add(String.valueOf(br));
 				}
-			}catch(FileNotFoundException e) {
-				//최초 등록시 FileNotFoundException발생
-//				//최종 등록시 파일 생성하기 
-//				try {
-//					f.createNewFile();
-//				} catch (IOException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
-			}catch(EOFException e) {
-				//처리코드 없음.//예외가 발생하기 때문에 반복문이 탈출됌.
 			}catch(Exception e1) {
 				e1.printStackTrace();
 			}
@@ -42,24 +32,18 @@ public class TtmIO {
 		
 	}
 	
-	public String loadName(String name) {
+	public List<String> loadName() {
+		List<String> list = new ArrayList<String>();
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter(f));
 			){
-			}catch(FileNotFoundException e) {
-				//최초 등록시 FileNotFoundException발생
-//				//최종 등록시 파일 생성하기 
-//				try {
-//					f.createNewFile();
-//				} catch (IOException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
-			}catch(EOFException e) {
-				//처리코드 없음.//예외가 발생하기 때문에 반복문이 탈출됌.
-			}catch(Exception e1) {
-				e1.printStackTrace();
+			 	while(true) {
+			 		String name = String.valueOf(bw);
+			 		list.add(name);
+			 	}
+			}catch(IOException e) {
+				e.printStackTrace();
 			}
-		return name;
+		return list;
 		
 	}
 }

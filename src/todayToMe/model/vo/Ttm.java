@@ -13,11 +13,7 @@ public class Ttm implements Serializable{
 	private int sumSocial;
 	private int sumIndividual;
 	
-	
 
-	int i = 0;
-	
-	
 	public Ttm() {
 		super();
 		// TODO Auto-generated constructor stub
