@@ -1,8 +1,11 @@
 package todayToMe.view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,9 +13,11 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import todayToMe.model.vo.Ttm;
 import todayToMe.util.TtmUtil;
 import todayToMe.view.TtmMainview.ImagePanel;
 
@@ -34,12 +39,62 @@ public class Q5 extends JFrame{
 		b.setBounds(60, 540, 50,50);
 		c.setBounds(60, 610, 50,50);
 		d.setBounds(60, 700, 50,50);
+		a.setBackground(new Color(204,204,204));
+		b.setBackground(new Color(204,204,204));
+		c.setBackground(new Color(204,204,204));
+		d.setBackground(new Color(204,204,204));
 		panel.add(a);
 		panel.add(b);
 		panel.add(c);
 		panel.add(d);
 		add(panel);
 		pack();
+		
+		//선택시 이벤트 발생
+		a.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "A선택.");
+				new Ttm().setSumIndividual(5);
+				new Q6(540, 960, "Q6").setVisible(true);
+			}
+			
+			
+		});
+		b.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "B선택.");
+				new Ttm().setSumIndividual(3);
+				new Q6(540, 960, "Q6").setVisible(true);
+			}
+			
+			
+		});
+		c.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "C선택.");
+				new Ttm().setSumIndividual(2);
+				new Q6(540, 960, "Q6").setVisible(true);
+			}
+			
+			
+		});
+		d.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "D선택.");
+				new Ttm().setSumIndividual(0);
+				new Q6(540, 960, "Q6").setVisible(true);
+			}
+			
+			
+		});
 	}
 	
 	public class ImagePanel extends JPanel{

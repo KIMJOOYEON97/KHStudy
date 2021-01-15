@@ -13,7 +13,7 @@ public class TtmUtil {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public static void changePanel(JFrame parent, ChangePanel current, JPanel next) {
+	public static void changePanel(JFrame parent, JPanel current, JPanel next) {
 		parent.remove(current);
 		parent.add(next);
 		

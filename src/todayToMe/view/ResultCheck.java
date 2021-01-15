@@ -22,29 +22,29 @@ import todayToMe.model.vo.Ttm;
 import todayToMe.util.TtmUtil;
 
 //사용자에게 맨 처음 보여지는 화면
-public class TtmMainview extends JFrame{
+public class ResultCheck extends JFrame{
 						
 //	public static ChangePanel passpanel;
-	ImagePanel panel = new ImagePanel("Main1.png");
+	ImagePanel panel = new ImagePanel("check.png");
 
-	public TtmMainview(int w, int h,String title) {
+	public ResultCheck(int w, int h,String title) {
 		TtmUtil.init(this, w, h, title);
 		
-		ImagePanel panel = new ImagePanel("image/Main1.png");
+		ImagePanel panel = new ImagePanel("image/check.png");
 		
 		
 		
 		//버튼 원하는 위치에 둘려면 필요함
 		panel.setLayout(null);
 		
-		Font font = new Font("맑은 고딕",Font.BOLD,30);
+		Font font = new Font("맑은 고딕",Font.BOLD,50);
 		
-		JButton startBtn = new JButton("start");
+		JButton startBtn = new JButton("결과 확인");
 		
 		
 		startBtn.setFont(font);
-		startBtn.setBounds(380, 550, 100, 100);
-		startBtn.setBackground(new Color(204,204,204));
+		startBtn.setBounds(30, 300, 500, 50);
+		startBtn.setBackground(new Color(247,239,220));
 		
 		
 		
@@ -56,15 +56,7 @@ public class TtmMainview extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				//Ttm ttm = new Ttm(sumPrice, sumTemp, sumSocial, sumIndividual);
-				Ttm ttm = new Ttm(0, 0, 0, 0);
-				
-				//다음 클래스로 갈 수 있는 방법 찾음.
-				new Q1(540, 960, "Q1").setVisible(true);
-				JOptionPane.showMessageDialog(null, "Test start. \n 질문을 읽고 A~D사이의 선택지 중 \n하나만 고르세요");
-				//Q1으로 화면 교체
-		
+				new Q11(540, 960, "Q11").setVisible(true);
 			}
 		});
 	}

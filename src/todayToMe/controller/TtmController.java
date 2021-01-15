@@ -1,5 +1,7 @@
 package todayToMe.controller;
 
+import java.util.List;
+
 import todayToMe.io.TtmIO;
 
 public class TtmController {
@@ -7,11 +9,12 @@ public class TtmController {
 	//입력출력클래스 필드로 선언
 	private TtmIO ttmIO = new TtmIO();
 	
-	public void insertPoint(int num) {
-		ttmIO.insertPoint(num);
+	public void insertName(String name) {
+		ttmIO.insertName(name);
 	}
-	public int loadPoint() {
-		return ttmIO.loadPoint();
+
+	public String loadName() {
+		return ttmIO.loadName(null);
 	}
 
 }

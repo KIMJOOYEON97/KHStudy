@@ -16,55 +16,70 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import todayToMe.controller.TtmController;
+import todayToMe.io.TtmIO;
 import todayToMe.model.vo.Ttm;
 import todayToMe.util.TtmUtil;
 
 //사용자에게 맨 처음 보여지는 화면
-public class TtmMainview extends JFrame{
-						
-//	public static ChangePanel passpanel;
-	ImagePanel panel = new ImagePanel("Main1.png");
+public class Q9 extends JFrame{
+		
+	JTextArea username;
+	ImagePanel panel = new ImagePanel("Q9.png");
 
-	public TtmMainview(int w, int h,String title) {
+	public Q9(int w, int h,String title) {
 		TtmUtil.init(this, w, h, title);
 		
-		ImagePanel panel = new ImagePanel("image/Main1.png");
+		ImagePanel panel = new ImagePanel("image/Q9.png");
 		
 		
 		
 		//버튼 원하는 위치에 둘려면 필요함
 		panel.setLayout(null);
+		username= new JTextArea(5,20);
+		username.setBounds(100, 500 , 200, 200);
 		
 		Font font = new Font("맑은 고딕",Font.BOLD,30);
 		
-		JButton startBtn = new JButton("start");
+		JButton inputBtn = new JButton("입력");
 		
 		
-		startBtn.setFont(font);
-		startBtn.setBounds(380, 550, 100, 100);
-		startBtn.setBackground(new Color(204,204,204));
+		inputBtn.setFont(font);
+		inputBtn.setBounds(380, 550, 100, 100);
+		inputBtn.setBackground(new Color(204,204,204));
 		
 		
-		
-		panel.add(startBtn);
+		panel.add(username);
+		panel.add(inputBtn);
 		add(panel);
 		pack();
 		
-		startBtn.addActionListener(new ActionListener() {
+		
+		
+		inputBtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				//Ttm ttm = new Ttm(sumPrice, sumTemp, sumSocial, sumIndividual);
-				Ttm ttm = new Ttm(0, 0, 0, 0);
-				
-				//다음 클래스로 갈 수 있는 방법 찾음.
-				new Q1(540, 960, "Q1").setVisible(true);
-				JOptionPane.showMessageDialog(null, "Test start. \n 질문을 읽고 A~D사이의 선택지 중 \n하나만 고르세요");
-				//Q1으로 화면 교체
+				String s = username.getText();
+				TtmIO.insertName(s); 
+	
+				LoadingGif lg = new LoadingGif();
+				//null값으로 주면 된다, lg의 모든 메소드를 불러옴(메인을 호출했음으로)
+				try {
+					lg.main(null);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				JOptionPane.showMessageDialog(null, "입력완료");
 		
+				
+//				new Q10(540,960,"Q10").setVisible(true);
+				
+				
 			}
 		});
 	}
