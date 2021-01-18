@@ -17,18 +17,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import todayToMe.model.vo.Ttm;
+import todayToMe.model.vo.TtmSum;
 import todayToMe.util.TtmUtil;
-import todayToMe.view.TtmMainview.ImagePanel;
 
 public class Q3 extends JFrame{
 
 	
-	ImagePanel panel = new ImagePanel("Q3.png");
 	public Q3(int w, int h, String title) {
 		TtmUtil.init(this, w, h, title);
 		
-		ImagePanel panel = new ImagePanel("image/Q3.png");
+		ImagePanelClass panel = new ImagePanelClass("image/Q3.png");
 		
 		panel.setLayout(null);
 		JButton a = new JButton("A");
@@ -50,82 +48,27 @@ public class Q3 extends JFrame{
 		add(panel);
 		pack();
 		//선택시 이벤트 발생
-		a.addActionListener(new ActionListener() {
-
+		a.addActionListener(addListener("A선택",0));
+		b.addActionListener(addListener("B선택",2));
+		c.addActionListener(addListener("C선택",4));
+		d.addActionListener(addListener("D선택",5));
+	}
+	public ActionListener addListener(String choice,int point) {
+		ActionListener listener = new ActionListener() {
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "A선택.");
-				new Ttm().setSumSocial(5);
-				new Q4(540, 960, "Q4").setVisible(true);
+				JOptionPane.showMessageDialog(null, choice);
+				TtmSum.addSocial(point);
+				Q3.this.dispose();
+				new Q4(540,960,"Q4").setVisible(true);
 			}
-			
-			
-		});
-		b.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "B선택.");
-				new Ttm().setSumSocial(3);
-				new Q4(540, 960, "Q4").setVisible(true);
-			}
-			
-			
-		});
-		c.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "C선택.");
-				new Ttm().setSumSocial(2);
-				new Q4(540, 960, "Q4").setVisible(true);
-			}
-			
-			
-		});
-		d.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "D선택.");
-				new Ttm().setSumSocial(0);
-				new Q4(540, 960, "Q4").setVisible(true);
-			}
-			
-			
-		});
+		};
+		
+		return listener;
+		
 	}
 	
-	public class ImagePanel extends JPanel{
-		
-		private BufferedImage image;
-		private int w;
-		private int h;
-		
-		public ImagePanel(String fileName) {
-			try {
-				image = ImageIO.read(new File(fileName));
-				w = image.getWidth();
-				h = image.getHeight();
-			}catch(IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		@Override
-		public Dimension getPreferredSize() {
-			return new Dimension(w,h);
-			
-		}
-		@Override
-		public void paintComponent(Graphics g) {
-			super.paintComponent(g);
-			
-			g.drawImage(image,0,0,null);
-		}
-		
-		
-	}
 
 	public static void main(String[] args) {
 		new Q3(540,960,"Q3").setVisible(true);

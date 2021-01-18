@@ -13,7 +13,7 @@ public class TtmController {
 		ttmIO.insertName(name);
 	}
 
-	public List<String> loadName() {
+	public String loadName() {
 		return ttmIO.loadName();
 	}
 

@@ -23,9 +23,8 @@ public class  LoadingGif {
        
       }
     });
-    //결과 확인 나중에 나오게.
-    Thread.sleep(4000);
-    new ResultCheck(540, 960, "ResultCheck").setVisible(true);
+    Thread.sleep(3000);
+    new Q10(540, 960, "Q10").setVisible(true);
     
   }
 }

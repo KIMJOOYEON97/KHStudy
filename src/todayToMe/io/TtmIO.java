@@ -15,35 +15,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class TtmIO {
-	static File f = new File("todayToMe.txt");
+	public static String name = "";
+	
+	File f = new File("todayToMe.txt");
 			
-	public static String insertName(String name) {
-		List<String> nameList =new ArrayList<>();
-		try(BufferedReader br = new BufferedReader(new FileReader(f));
-			){
-				while(true) {
-					nameList.add(String.valueOf(br));
-				}
-			}catch(Exception e1) {
-				e1.printStackTrace();
-			}
-		return name;
-		
+	public String insertName(String inputname) {
+		name = inputname;
+		return name;	
 	}
 	
-	public List<String> loadName() {
-		List<String> list = new ArrayList<String>();
-		try(BufferedWriter bw = new BufferedWriter(new FileWriter(f));
-			){
-			 	while(true) {
-			 		String name = String.valueOf(bw);
-			 		list.add(name);
-			 	}
-			}catch(IOException e) {
-				e.printStackTrace();
-			}
-		return list;
-		
+	public String loadName() {
+		return name;
 	}
 }

@@ -5,10 +5,10 @@ import java.util.List;
 
 public class TtmSum {
 
-	static int addPrice;
-	static int addTemp;
-	static int addSocial;
-	static int addIndividual;
+	static int addPrice = 0;
+	static int addTemp = 0;
+	static int addSocial = 0;
+	static int addIndividual = 0;
 	
 	
 	public TtmSum() {

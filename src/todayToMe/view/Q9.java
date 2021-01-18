@@ -20,20 +20,18 @@ import javax.swing.JTextArea;
 
 import todayToMe.controller.TtmController;
 import todayToMe.io.TtmIO;
-import todayToMe.model.vo.Ttm;
+import todayToMe.model.vo.TtmSum;
 import todayToMe.util.TtmUtil;
 
 
 public class Q9 extends JFrame{
 		
 	JTextArea username;
-	ImagePanel panel = new ImagePanel("Q9.png");
 
 	public Q9(int w, int h,String title) {
 		TtmUtil.init(this, w, h, title);
 		
-		ImagePanel panel = new ImagePanel("image/Q9.png");
-		
+		ImagePanelClass panel = new ImagePanelClass("image/Q9.png");
 		
 		
 		//버튼 원하는 위치에 둘려면 필요함
@@ -62,52 +60,21 @@ public class Q9 extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				String s = username.getText();
-				TtmIO.insertName(s); 
+				new TtmIO().insertName(s); 
 	
 				LoadingGif lg = new LoadingGif();
 				//null값으로 주면 된다, lg의 모든 메소드를 불러옴(메인을 호출했음으로)
 				try {
 					lg.main(null);
 				} catch (InterruptedException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				JOptionPane.showMessageDialog(null, "입력완료");
+				JOptionPane.showMessageDialog(null, "입력완료");				
+				Q9.this.dispose();
+				new Q10(540, 960, "ResultCheck").setVisible(true);
 			}
 		});
 	}
-	
-	public class ImagePanel extends JPanel {
 
-		private BufferedImage image;
-		private int w;
-		private int h;
-		
-		public ImagePanel(String fileName) {
-			try {
-					image = ImageIO.read(new File(fileName));
-					w = image.getWidth();
-					h = image.getHeight();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}	
-	
-	
-		@Override
-		public Dimension getPreferredSize() {
-			return new Dimension(w, h);
-		}
-		
-		@Override
-		public void paintComponent(Graphics g) {
-			super.paintComponent(g);
-			//img 객체를 x,y값만큼 떨어트려 그리기
-			//boolean java.awt.Graphics.drawImage(Image img, int x, int y, ImageObserver observer)
-			g.drawImage(image, 0,0, null);
-		}
-	
-	}
 }

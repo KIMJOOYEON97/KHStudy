@@ -1,37 +1,63 @@
 package todayToMe.view;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import todayToMe.controller.TtmController;
 import todayToMe.util.TtmUtil;
-import todayToMe.view.Q3.ImagePanel;
 
-public class Q10 extends JPanel{
-	   private JFrame parent;   //접근제어자  Jframe 
-	   private BufferedImage image;
-	   
-	   public Q10(JFrame paent) {
-	      this.parent=parent;
-	      try {
-	         image= ImageIO.read(new File("images/loading.gif"));      //파일이미지 읽기 
-	         
-	      }catch(IOException e) {
-	         e.printStackTrace();
-	      }
-	   }
-	   @Override
-	   public void paintComponent(Graphics g) {
-	       super.paintComponent(g);
-	       if (image != null) {
-	         g.drawImage(image, 0, 0, this);
-	       }
-	     }
+//사용자에게 맨 처음 보여지는 화면
+public class Q10 extends JFrame{
+						
+//	public static ChangePanel passpanel;
+
+	public Q10(int w, int h,String title) {
+		TtmUtil.init(this, w, h, title);
+		
+		ImagePanelClass panel = new ImagePanelClass("image/check.png");
+		
+		
+		
+		//버튼 원하는 위치에 둘려면 필요함
+		panel.setLayout(null);
+		
+		Font font = new Font("맑은 고딕",Font.BOLD,50);
+		
+		JButton startBtn = new JButton("결과 확인");
+		
+		
+		startBtn.setFont(font);
+		startBtn.setBounds(30, 300, 500, 50);
+		startBtn.setBackground(new Color(247,239,220));
+		
+		
+		
+		panel.add(startBtn);
+		add(panel);
+		pack();
+		
+		startBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Q11(540, 960, "Q11").setVisible(true);
+				Q10.this.dispose();
+			}
+		});
 	}
+	
+}
